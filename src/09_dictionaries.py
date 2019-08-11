@@ -47,6 +47,4 @@ print(waypoints)
 # YOUR CODE HERE
 for i in waypoints:
     print(i.values())
-    # print(i['lat'])
-    # print(i['lon'])
-    # print(i['name'])
+
