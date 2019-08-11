@@ -29,5 +29,4 @@ x = input("Enter comma-separated numbers: ").split(',')
 # What do you need between the square brackets to make it work?
 # input values come in as text, need to cast to an int
 y = [num for num in x if int(num) % 2 == 0]
-
 print(y)
