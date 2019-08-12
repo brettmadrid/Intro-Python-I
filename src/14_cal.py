@@ -22,3 +22,34 @@ and does the following:
 import sys
 import calendar
 from datetime import datetime
+
+calendar.setfirstweekday(calendar.SUNDAY)
+
+x = input("Please enter a comma-separated year and month (ex: 2019,8): ").split(',')
+
+def user_input(*dates):
+  try:
+    #no input
+    if x[0] == '':
+      print('No date values were input.  The current year and month is: ')
+      return calendar.month(datetime.now().year, datetime.now().month)
+
+    # only month input
+    elif len(dates) == 1:
+      return calendar.month(datetime.now().year, int(dates[0]))
+    
+    # year and month input
+    elif len(dates) == 2:
+      input_year = int(dates[0])
+      input_month = int(dates[1])
+
+      if isinstance(input_year, int) and input_month > 0 and input_month < 13:
+        return calendar.month(input_year, input_month)
+      else:
+        return calendar.month(datetime.now().year, datetime.now().month)
+    else:
+      print('Input values should be year, month (ex. 2018,10)')
+  except:
+    print('Input values should be year, month (ex. 2018,10)')
+  
+print(user_input(*x))

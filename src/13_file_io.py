@@ -9,6 +9,12 @@ https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files
 # Print all the contents of the file, then close the file
 
 # YOUR CODE HERE
+def load_file():
+  text_file = open("src/foo.txt", "r")
+  print(text_file.read())
+  text_file.close()
+
+load_file()
 
 # Open up a file called "bar.txt" (which doesn't exist yet) for
 # writing. Write three lines of arbitrary content to that file,
@@ -16,3 +22,9 @@ https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files
 # sure that it contains what you expect it to contain
 
 # YOUR CODE HERE
+def write_file():
+  text_file = open('src/bar.txt', 'w+')
+  text_file.write('sayaret matkal\r\n' + 'givurati brigade\r\n' + 'Adonai Echad!\r\n')
+  text_file.close()
+  
+write_file()
